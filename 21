@@ -1,0 +1,23 @@
+deck = [6,7,8,9,10,2,3,4,11] * 4
+import random
+random.shuffle(deck)
+print("Let's play '21' ?")
+count = 0
+while True:
+    choice = input("Do you want to play ? y/n\n")
+    if choice == "y":
+        current = deck.pop()
+        print("You have point %d" %current)
+        count += current
+        if count > 21:
+            print("Sorry, you are fail :(")
+            break
+        elif count == 21:
+            print("You are a winner :)")
+            break
+        else:
+            print("You have %d points" %count)
+    elif choice == "n":
+        print("You have %d points and you stopped the game" %count)
+        break
+    print("See you later. Good bye!")
